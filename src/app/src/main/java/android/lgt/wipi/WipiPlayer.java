@@ -72,15 +72,7 @@ public class WipiPlayer extends Activity {
 
     static {
         Log.i(TAG, "=========== Starting WipiPlayer ===========");
-        File lib = new File("/data/data/android.lgt.wipi/lib/liblgt_system.so");
-        if (lib.exists()) {
-            Log.i(TAG, "try to load /data/data/android.lgt.wipi/lib/liblgt_system.so");
-            System.load("/data/data/android.lgt.wipi/lib/liblgt_system.so");
-            return;
-        }
-        Log.i(TAG, "/data/data/android.lgt.wipi/lib/liblgt_system.so not exist");
-        Log.i(TAG, "try to load /system/lib/liblgt_system.so");
-        System.load("/system/lib/liblgt_system.so");
+        System.loadLibrary("liblgt_system");
     }
 
     @Override // android.app.Activity
