@@ -1,0 +1,23 @@
+Signature-Version: 1.0
+Created-By: 1.0 (Android)
+SHA1-Digest-Manifest: p+2ZmjSrOlML+Ns/CDMq8vr0Cy8=
+X-Android-APK-Signed: 2,3
+
+Name: AndroidManifest.xml
+SHA1-Digest: BqRjdSsSJmcu/9ybLGabcndQJwQ=
+
+Name: classes.dex
+SHA1-Digest: N01kldNQJGiSeDjQ6y8pGs0NGRg=
+
+Name: lib/armeabi/liblgt_system.so
+SHA1-Digest: Hp1PLyQW30u7NRW7/aN+gODHYss=
+
+Name: res/drawable/icon.png
+SHA1-Digest: NAUI3YaI7ly38ZWzD3jUsxPxI+4=
+
+Name: res/layout/main.xml
+SHA1-Digest: ELVPthVvK9Ce9hpBhqNDrXofFSs=
+
+Name: resources.arsc
+SHA1-Digest: qEQmdbFIGmXmzbLr3KhJsRZM1yE=
+

@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Built-By: Generated-by-ADT
+Created-By: Android Gradle 3.5.0
+
+Name: AndroidManifest.xml
+SHA1-Digest: T5IkzAp4tLpkEDpkzFvOcjVYiYo=
+
+Name: classes.dex
+SHA1-Digest: 5ybTDP95Zm1cS4Qw3Ns6xoof2yw=
+
+Name: lib/armeabi/liblgt_system.so
+SHA1-Digest: sTUiPsnqYU67k12JFCJfRVrBnHQ=
+
+Name: res/drawable/icon.png
+SHA1-Digest: 7xizMYuoK0G55atqZU5G+9iBNGs=
+
+Name: res/layout/main.xml
+SHA1-Digest: XAysbafRvDaXaxg4HHpszRUJ/Nw=
+
+Name: resources.arsc
+SHA1-Digest: 7OhmXFu6oDHDtnIrro9wH0Guo7E=
+
