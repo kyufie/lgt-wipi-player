@@ -28,14 +28,13 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-        lintOptions {
-            abortOnError false
-        }
-    
+    lintOptions {
+        abortOnError false
+    }
+
     sourceSets.main {
-        jni.srcDirs = [] 
-        jniLibs.srcDir 'src/main/lib' 
-    } 
+        jniLibs.srcDirs = ['src/main/jniLibs']
+    }
 }
 
 dependencies {
