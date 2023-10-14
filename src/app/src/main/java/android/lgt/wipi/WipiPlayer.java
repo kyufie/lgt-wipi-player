@@ -72,7 +72,7 @@ public class WipiPlayer extends Activity {
 
     static {
         Log.i(TAG, "=========== Starting WipiPlayer ===========");
-        System.loadLibrary("liblgt_system");
+        System.loadLibrary("lgt_system");
     }
 
     @Override // android.app.Activity
