@@ -448,6 +448,7 @@ public class WipiPlayer extends Activity {
 
     public static void flushBitmap(short[] framebuffer, int left, int top, int right, int bottom) {
         if (!mBpaused) {
+            mBuf.rewind();
             mBuf.put(framebuffer);
             mBuf.rewind();
             mFrame.flushFrame(mBuf, left, top, right, bottom);
