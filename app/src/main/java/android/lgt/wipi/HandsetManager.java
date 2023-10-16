@@ -43,9 +43,9 @@ public class HandsetManager {
         this.mProcessorInfo = null;
         this.bLGUPAPI = false;
         this.mContext = (Activity) context;
-        this.mVb = (Vibrator) this.mContext.getSystemService("vibrator");
+        this.mVb = (Vibrator) this.mContext.getSystemService(Context.VIBRATOR_SERVICE);
         this.mMsgHandler = ((WipiPlayer) this.mContext).getHandler();
-        TelephonyManager tm = (TelephonyManager) this.mContext.getSystemService("phone");
+        TelephonyManager tm = (TelephonyManager) this.mContext.getSystemService(Context.TELEPHONY_SERVICE);
         try {
             this.mNid = String.valueOf(((CdmaCellLocation) tm.getCellLocation()).getNetworkId());
             this.mSid = String.valueOf(((CdmaCellLocation) tm.getCellLocation()).getSystemId());

@@ -1,5 +1,6 @@
 package android.lgt.wipi;
 
+import android.content.Context;
 import android.net.ConnectivityManager;
 import android.os.Message;
 import android.util.Log;
@@ -65,7 +66,7 @@ public class WipiSocket {
         if (this.type != 1) {
             return ENOTSUP;
         }
-        ConnectivityManager cm = (ConnectivityManager) WipiPlayer.getContext().getSystemService("connectivity");
+        ConnectivityManager cm = (ConnectivityManager) WipiPlayer.getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
         String target = String.valueOf(address) + ":" + port2;
         boolean haveToUse3G = isBillGatewayIP(target.substring(0, target.indexOf(58)));
         if (haveToUse3G) {
@@ -281,7 +282,7 @@ public class WipiSocket {
         }
         if (this.usingNetworkFeatureResult != ERROR) {
             try {
-                ConnectivityManager cm = (ConnectivityManager) WipiPlayer.getContext().getSystemService("connectivity");
+                ConnectivityManager cm = (ConnectivityManager) WipiPlayer.getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
                 cm.stopUsingNetworkFeature(0, "enableHIPRI");
                 this.usingNetworkFeatureResult = ERROR;
             } catch (IllegalArgumentException e2) {

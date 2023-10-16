@@ -1,5 +1,6 @@
 package android.lgt.wipi;
 
+import android.content.Context;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.SoundPool;
@@ -24,7 +25,7 @@ public class WipiMediaManager {
     private SoundPool soundPool;
     private float volume = 1.0f;
     private int streamID = 0;
-    private AudioManager audioMgr = (AudioManager) WipiPlayer.getContext().getSystemService("audio");
+    private AudioManager audioMgr = (AudioManager) WipiPlayer.getContext().getSystemService(Context.AUDIO_SERVICE);
     private int maxVolume = this.audioMgr.getStreamMaxVolume(3);
     private Hashtable<String, Integer> mediaTable = new Hashtable<>();
     private MediaPlayer mediaPlayer = new MediaPlayer();

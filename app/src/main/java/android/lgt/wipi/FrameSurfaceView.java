@@ -2,6 +2,7 @@ package android.lgt.wipi;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -55,11 +56,11 @@ public class FrameSurfaceView extends View {
         if (this._bitmap == null) {
             Log.v(WipiPlayer.TAG, "initBitmap() isPortrait : " + isPortrait());
             if (isPortrait()) {
-                this.mActivity.setRequestedOrientation(1);
+                this.mActivity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
                 WIPI_PLATFORM_LCD_WIDTH = 240;
                 WIPI_PLATFORM_LCD_HEIGHT = 400;
             } else {
-                this.mActivity.setRequestedOrientation(0);
+                this.mActivity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
                 WIPI_PLATFORM_LCD_WIDTH = 400;
                 WIPI_PLATFORM_LCD_HEIGHT = 240;
             }

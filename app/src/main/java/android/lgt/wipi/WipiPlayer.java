@@ -17,6 +17,7 @@ import android.os.Message;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -118,7 +119,7 @@ public class WipiPlayer extends Activity {
             mBpaused = false;
         }
         if (!mFrame.didFirstFlush()) {
-            this.progressBar.setVisibility(8);
+            this.progressBar.setVisibility(View.GONE);
             setContentView(mFrame);
         }
         if (this.mediaMgr != null) {
@@ -135,7 +136,7 @@ public class WipiPlayer extends Activity {
         }
         setContentView(R.layout.main);
         this.progressBar = (ProgressBar) findViewById(16908301);
-        this.progressBar.setVisibility(0);
+        this.progressBar.setVisibility(View.VISIBLE);
         if ((mPopup == null || !mPopup.isShowing()) && !mBpaused && !this.mBexited) {
             pltChangeStateN(0);
             mBpaused = true;
@@ -143,7 +144,7 @@ public class WipiPlayer extends Activity {
         if (this.mediaMgr != null) {
             this.mediaMgr.pauseSound();
         }
-        ActivityManager am = (ActivityManager) getSystemService("activity");
+        ActivityManager am = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
         am.killBackgroundProcesses("com.lgt.arm");
     }
 
@@ -161,7 +162,7 @@ public class WipiPlayer extends Activity {
         Log.d(TAG, "onDestroy()");
         super.onDestroy();
         unregisterReceiver(this.mReceiver);
-        ActivityManager am = (ActivityManager) getSystemService("activity");
+        ActivityManager am = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
         am.restartPackage(getPackageName());
     }
 
@@ -189,7 +190,7 @@ public class WipiPlayer extends Activity {
     @Override // android.app.Activity, android.view.KeyEvent.Callback
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         Log.d(TAG, "onKeyDown()");
-        AudioManager audio = (AudioManager) getSystemService("audio");
+        AudioManager audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
         switch (keyCode) {
             case 4:
                 showAlertDialog("종료", "애플리케이션을 종료하시겠습니까?", "예", "아니요", null, new DialogInterface.OnClickListener() { // from class: android.lgt.wipi.WipiPlayer.1
@@ -252,7 +253,7 @@ public class WipiPlayer extends Activity {
         mFrame = new FrameSurfaceView(this);
         setContentView(R.layout.main);
         this.progressBar = (ProgressBar) findViewById(16908301);
-        this.progressBar.setVisibility(0);
+        this.progressBar.setVisibility(View.VISIBLE);
         mBuf = ShortBuffer.allocate(96000);
         this.mAid = getIntent().getStringExtra("AID_PATH");
         this.mAid = this.mAid.substring(0, this.mAid.indexOf(".jar"));
@@ -364,15 +365,15 @@ public class WipiPlayer extends Activity {
                             }
                         }, null);
                     } else if (msg.arg1 == 3) {
-                        Toast.makeText(WipiPlayer.this, "해외로밍지역 서비스불가", 1).show();
+                        Toast.makeText(WipiPlayer.this, "해외로밍지역 서비스불가", Toast.LENGTH_LONG).show();
                     } else if (msg.arg1 == 4) {
-                        Toast.makeText(WipiPlayer.this, "연결된 네트워크 없음", 1).show();
+                        Toast.makeText(WipiPlayer.this, "연결된 네트워크 없음", Toast.LENGTH_LONG).show();
                     } else if (msg.arg1 == 5) {
-                        Toast.makeText(WipiPlayer.this, "미가입 단말 서비스불가", 1).show();
+                        Toast.makeText(WipiPlayer.this, "미가입 단말 서비스불가", Toast.LENGTH_LONG).show();
                     } else if (msg.arg1 == 6) {
-                        Toast.makeText(WipiPlayer.this, "비행기 모드 서비스불가", 1).show();
+                        Toast.makeText(WipiPlayer.this, "비행기 모드 서비스불가", Toast.LENGTH_LONG).show();
                     } else if (msg.arg1 == 7) {
-                        WipiPlayer.this.progressBar.setVisibility(8);
+                        WipiPlayer.this.progressBar.setVisibility(View.GONE);
                         WipiPlayer.this.setContentView(WipiPlayer.mFrame);
                     } else if (msg.arg1 == 8) {
                         WipiPlayer.this.showAlertDialog("저장공간 부족", "휴대전화에서 저장 공간을 늘린 후에 다시 시도해주세요.", "확인", null, null, new DialogInterface.OnClickListener() { // from class: android.lgt.wipi.WipiPlayer.4.3
