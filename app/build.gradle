@@ -11,7 +11,7 @@ android {
     defaultConfig {
         applicationId 'android.lgt.wipi'
         minSdkVersion 17
-        targetSdkVersion 19
+        targetSdkVersion 17
         versionCode 40
         versionName "1.00.005.40"
 
