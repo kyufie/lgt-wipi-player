@@ -6,6 +6,8 @@ android {
     compileSdkVersion 17
     buildToolsVersion "34.0.0"
 
+    namespace = "android.lgt.wipi"
+
     defaultConfig {
         applicationId 'android.lgt.wipi'
         minSdkVersion 17
